@@ -1,0 +1,85 @@
+.title {
+    font-size: 45rpx;
+    display: flex;
+    justify-content: center;
+    margin: 10rpx;
+    font-weight: bold;
+}
+
+.tip {
+    font-size: 30rpx;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 20rpx 0rpx;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: space-between;
+    margin-bottom: 20rpx;
+}
+
+.select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.radiogroup {
+    display: flex;
+}
+
+.radiobox {
+    display: flex;
+    flex-direction: row;
+    margin-left: 50rpx;
+}
+
+.radiobox .wx-radio-input {
+    width: 32rpx;
+    height: 32rpx;
+    border-radius: 0
+}
+
+.radiobox .wx-radio-input.wx-radio-input-checked {
+    width: 32rpx;
+    height: 32rpx;
+    background: white !important;
+}
+
+.radiobox .wx-radio-input.wx-radio-input-checked::before {
+    width: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    text-align: center;
+    font-size: 36rpx;
+    color: black;
+    background: white;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.section {
+    width: 100%;
+    height: 140rpx;
+}
+
+.btnview {
+    width: 100%;
+    padding: 20rpx 0;
+    bottom: 0;
+    left: 0;
+}
+
+.submitbtn {
+    border: 3px solid #00008B;
+    width: 90%;
+}
+
+.picker{
+    padding: 20rpx;
+    margin-top: 40rpx;
+    background-color: #e9e7e7;
+}

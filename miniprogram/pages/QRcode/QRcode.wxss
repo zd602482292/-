@@ -1,0 +1,30 @@
+.name{
+    display: flex;
+    justify-content: center;
+    margin-top: 50rpx;
+    margin-bottom: 15rpx;
+    font-size: large;
+}
+.QRcodeview{
+    display: flex;
+    justify-content: center;
+}
+.QRcode{
+    border: 4px solid #00008B;
+    border-radius: 10rpx;
+}
+.tip1{
+    display: flex;
+    justify-content: center;
+    margin:20rpx 0;
+    font-size: larger;
+    font-weight: bold;
+    color: #00008B;
+}
+.tip2{
+    display: flex;
+    justify-content: center;
+    font-size: small;
+    font-weight: bolder;
+
+}

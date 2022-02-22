@@ -1,0 +1,16 @@
+/**app.wxss**/
+.container {
+  padding:0 26rpx;
+  box-sizing: border-box;
+} 
+
+page {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+@keyframes donghua{
+  0%,50%,100%{opacity:1;}
+  25%{opacity: 0;}
+}

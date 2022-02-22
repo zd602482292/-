@@ -1,0 +1,8 @@
+<view>
+<view class="name">姓名:{{name}}</view>
+<view class="QRcodeview">
+<canvas class="QRcode" type="2d" style="width: 550rpx; height: 550rpx;" id="Qrcode"></canvas>
+</view>
+<view class="tip1">【检测二维码】</view>
+<view class="tip2">请向医护人员出示此二维码信息</view>
+</view>

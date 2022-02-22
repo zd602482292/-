@@ -1,0 +1,25 @@
+<view>
+    <view class="title">患者问卷信息调查</view>
+    <view class="tip">注：带*号为必填内容</view>
+    <form bindsubmit="submit">
+        <view wx:for="{{questionList}}" wx:key="index" wx:for-item="a" wx:for-index="index" class="row" style="white-space:pre-wrap">{{index+1}}:{{a.title}}<view class="select">
+                <radio-group bindchange="radioChange" data-index="{{index+1}}" class="inp radiogroup">
+                    <view class="radiobox" wx:for="{{a.items}}" wx:key="index" wx:for-item="b">
+                        <radio value="{{b.id}}" checked="{{item.checked}}" />
+                        <view class="radiotxt">{{b.value}}</view>
+                    </view>
+                </radio-group>
+            </view>
+        </view>
+        <view class='section'>
+            <picker mode="date" value="{{date}}" start="2022-01-01" end="2032-12-31" bindchange="bindDateChange">
+                <view class="picker">
+                    提交日期：{{date}}
+                </view>
+            </picker>
+        </view>
+        <view class="btnview">
+            <button form-type="submit" class="submitbtn" >提交</button>
+        </view>
+    </form>
+</view>

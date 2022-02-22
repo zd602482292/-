@@ -1,0 +1,17 @@
+<view class="container">
+<view class="row">
+    <view class="weui-label">账号</view>
+    <view class="user_input">
+        <input bindblur="input1" name='userinput'  maxlength="16" placeholder="请输入账号" />
+    </view>
+</view>
+<view class="row">
+    <view class="weui-label">密码</view>
+    <view class="pwd_input">
+        <input bindblur="input2" name='pwdinput'  type="password" maxlength="16" placeholder="请输入密码" />
+    </view>
+</view>
+<view>
+    <button class='login' bindtap='login'>登录</button>
+</view>
+</view>

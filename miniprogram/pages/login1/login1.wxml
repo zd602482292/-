@@ -1,0 +1,17 @@
+<view class="info">
+    <image class="headpic" src="{{loginuser.avatarUrl}}"></image>
+    <view class="nkname">{{loginuser.nickName}}</view>
+</view>
+<view>
+<button class="jcsq" bindtap="jcsq">检测申请</button>
+</view>
+<view>
+    <button class="QRcode" bindtap="QRcode">我的检测码</button>
+</view>
+<view>
+    <button class="jcjl" bindtap="jcjl">检测记录</button>
+</view>
+<view>
+    <contact-button class="img-plus-style zindex100 yc"></contact-button>
+    <image src="../../images/客服.svg" class="img-plus-style"></image>
+</view>

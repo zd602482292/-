@@ -1,0 +1,11 @@
+<view class="sign">
+  <view class="paper">
+    <canvas class="handWriting" disable-scroll="true" bindtouchstart="touchstart1" bindtouchmove="touchmove1"  canvas-id="handWriting1">
+    </canvas>
+  </view>
+  <view class="signBtn">
+    <button  type="primary" bindtap="sign1ok">完成签字</button> 
+    <button  type="warn" bindtap="reSign1">重新签字</button>
+  </view>
+</view>
+

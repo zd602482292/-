@@ -1,0 +1,6 @@
+.paper{border:1px solid #dedede; margin: 10px; height:230rpx; }
+.signBtn{display: flex; margin-top:20px;}
+.handWriting{width:100%;height: 100%;}
+
+
+

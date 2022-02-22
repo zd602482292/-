@@ -1,0 +1,7 @@
+<view class="username">用户:{{username}}</view>
+<view>
+    <button class="smbd" bindtap="smbd">扫码绑定</button>
+</view>
+<view>
+    <button class="sjcx" bindtap="sjcx">检测数据查询</button>
+</view>
