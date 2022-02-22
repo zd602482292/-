@@ -1,1 +1,36 @@
-/* pages/smbd/smbd.wxss */
+.jcryname{
+    display: flex;
+    justify-content: center;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+    font-size: large;
+    font-weight: bolder;
+}
+.jcrysex{
+    display: flex;
+    justify-content: center;
+    margin-top: 30rpx;
+    margin-bottom: 15rpx;
+    font-size: large;
+    font-weight: bolder;
+}
+.jcryidcard{
+    display: flex;
+    justify-content: center;
+    margin-top: 30rpx;
+    margin-bottom: 15rpx;
+    font-size: large;
+    font-weight: bolder;
+}
+.jcryphonenum{
+    display: flex;
+    justify-content: center;
+    margin-top: 30rpx;
+    margin-bottom: 15rpx;
+    font-size: large;
+    font-weight: bolder;
+}
+.btn{
+    margin-top: 100rpx;
+    border: 3px solid #00008B;
+}

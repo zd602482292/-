@@ -84,6 +84,7 @@ Page({
                     openid
                   },
                    success: ress => {
+                    if (ress.result.data.length != 0) {
                     console.log('获取用户已有信息',ress.result)
                     app.globalData.jcryname=ress.result.data[0].name
                     app.globalData.jcrysex=ress.result.data[0].sex
@@ -95,14 +96,19 @@ Page({
                     wx.navigateTo({
                       url: '/pages/smbd/smbd',
                     })
+                  }
+                  else{
+                    wx.hideLoading({
+                    })
+                    wx.showToast({
+                      title: '二维码错误',
+                      icon:'error'
+                    })
+                  }
                 },
                 fail:ress=>{
                   console.log(ress)
                   wx.hideLoading({
-                  })
-                  wx.showToast({
-                    title: '二维码错误',
-                    icon:'error'
                   })
 
                 }

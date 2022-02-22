@@ -80,6 +80,10 @@ Page({
                         wx.showToast({
                           title: '扫描成功',
                         })
+
+
+                        wx.navigateBack({
+                        })
                       }
                 })
     }

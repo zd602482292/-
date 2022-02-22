@@ -1,7 +1,8 @@
-<view>确认信息
-<view>姓名：{{jcryname}}  性别：{{jcrysex}}</view>
-<view>身份证号:{{jcryidcard}} </view>
-<view>手机号码:{{jcryphonenum}} </view>
-<button bindtap="barcode">扫描条形码</button>
+<view>
+<view class="jcryname">姓名：{{jcryname}} </view>
+<view class="jcrysex">性别：{{jcrysex}}</view>
+<view class="jcryidcard">身份证号:{{jcryidcard}} </view>
+<view class="jcryphonenum">手机号码:{{jcryphonenum}} </view>
+<button class="btn" bindtap="barcode">扫描试管条形码</button>
 </view>
 

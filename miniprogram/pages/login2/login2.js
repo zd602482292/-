@@ -128,7 +128,7 @@ Page({
               wx.hideLoading({
                
               })
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '/pages/managestm/managestm',
               })
             }
