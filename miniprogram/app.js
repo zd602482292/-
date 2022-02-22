@@ -25,7 +25,8 @@ App({
       jcryname:null,
       jcrysex:null,
       jcryidcard:null,
-      jcryphonenum:null
+      jcryphonenum:null,
+      permission:null
       
     };
   },
