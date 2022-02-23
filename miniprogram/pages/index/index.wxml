@@ -17,24 +17,24 @@
 </view>
 
 <view class="major">
-    <navigator class="box" style="overflow: visible;" url="" >
-    <image class="pic" src="/images/公告.svg"></image>
+    <navigator class="box"  url="" >
+    <image class="pic" src="/images/gonggao.svg" ></image>
     <view class="txt">公告</view>
     </navigator>
-    <navigator class="box" style="overflow: visible;" url="">
-    <image class="pic" src="/images/医学资料.svg"></image>
+    <navigator class="box"  url="">
+    <image class="pic" src="/images/yixueziliao.svg" ></image>
     <view class="txt">医学资料</view>
     </navigator>
-    <navigator class="box" style="overflow: visible;" url="">
-    <image class="pic" src="/images/常见问题.svg"></image>
+    <navigator class="box"  url="">
+    <image class="pic" src="/images/cjwt.svg" ></image>
     <view class="txt">常见问题</view>
     </navigator>
 </view>
 <view class="login">
-  <button class="loginbtn" plain='true' bindtap="login1" style="overflow: visible;">
-    <image class="loginimg" mode="heightFix" src="/images/检测人员登录.svg"></image>检测人员登录
+  <button class="loginbtn" plain='true' bindtap="login1" >
+    <image class="loginimg" mode="heightFix" src="/images/jcry.svg" ></image>检测人员登录
   </button>
-  <button class="loginbtn" plain='true' bindtap="login2" style="overflow: visible;">
-    <image class="loginimg" mode="heightFix" src="/images/医生登录.svg"></image>医护人员登录
+  <button class="loginbtn" plain='true' bindtap="login2">
+    <image class="loginimg" mode="heightFix" src="/images/ysdl.svg" ></image>医护人员登录
   </button>
 </view>

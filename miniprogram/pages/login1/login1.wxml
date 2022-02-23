@@ -13,5 +13,5 @@
 </view>
 <view>
     <contact-button class="img-plus-style zindex100 yc"></contact-button>
-    <image src="../../images/客服.svg" class="img-plus-style"></image>
+    <image src="../../images/kefu.svg" class="img-plus-style"></image>
 </view>
