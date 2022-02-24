@@ -1,0 +1,9 @@
+<view>
+<view class="row">姓名：{{jcryname}} </view>
+<view class="row">性别：{{jcrysex}}</view>
+<view class="row">身份证号:{{jcryidcard}} </view>
+<view class="row">手机号码:{{jcryphonenum}} </view>
+<view class="row">试管条码号:{{jcrybarcode}} </view>
+<button class="btn" bindtap="confirm">信息正确</button>
+</view>
+

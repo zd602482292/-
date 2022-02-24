@@ -26,7 +26,8 @@ App({
       jcrysex:null,
       jcryidcard:null,
       jcryphonenum:null,
-      permission:null
+      permission:null,
+      jcrybarcode:null
       
     };
   },

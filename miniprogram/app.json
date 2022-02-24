@@ -10,7 +10,13 @@
         "pages/QRcode/QRcode",
         "pages/managestm/managestm",
         "pages/smbd/smbd",
-        "pages/sjcx/sjcx"
+        "pages/sjcx/sjcx",
+        "pages/jcjl/jcjl",
+        "pages/jcjlsc/jcjlsc",
+        "pages/tmgl/tmgl",
+        "pages/tkgl/tkgl",
+        "pages/zhpz/zhpz",
+        "pages/xinxiqueren/xinxiqueren"
     ],
     "window": {
         "backgroundColor": "#F6F6F6",

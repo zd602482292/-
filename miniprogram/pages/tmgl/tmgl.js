@@ -1,26 +1,20 @@
-const app = getApp()
+import{
+    barc
+}from '../../utils/index.js'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        jcryname: null,
-        jcrysex: null,
-        jcryidcard: null,
-        jcryphonenum: null,
+        code: [],
+        num:0
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.setData({
-            jcryname: app.globalData.jcryname,
-            jcrysex: app.globalData.jcrysex,
-            jcryidcard: app.globalData.jcryidcard,
-            jcryphonenum: app.globalData.jcryphonenum
-        })
     },
 
     /**
@@ -33,7 +27,9 @@ Page({
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {},
+    onShow: function () {
+
+    },
 
     /**
      * 生命周期函数--监听页面隐藏
@@ -70,24 +66,43 @@ Page({
 
     },
 
-    barcode: function () {
-        wx.scanCode({
-            scanType: ['barCode'],
-            success(res) {
-                console.log(res)
-                app.globalData.jcrybarcode=res.result
-                wx.vibrateShort({
-                    type: 'medium'
-                })
-                wx.redirectTo({
-                    url: '/pages/xinxiqueren/xinxiqueren',
-                })
-            },
-
-            fail(e) {
-                console.log(e)
-            }
-
+    input: function (data) {
+        this.setData({
+          num: data.detail.value
         })
+      },
+
+    randomWord: function () {
+
+        var chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+        var nums = "";
+
+        for (var i = 0; i < 16; i++) {
+
+            var id = parseInt(Math.random() * 10);
+
+            nums += chars[id];
+
+        }
+
+        return nums;
+
+    },
+
+    confirm:function () {
+        var num=this.data.num
+        var c=[];
+        for(var i=0;i<num;i++){
+            c.push(this.randomWord());
+        }
+        this.setData({
+            code:c
+        })
+        console.log(this.data.code)
+        for (var i in c){
+        barc('barcode'+i,c[i],600,100)
+        }
+        
     }
 })

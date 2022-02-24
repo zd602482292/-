@@ -136,7 +136,7 @@ Page({
         })
       } else if (!that.data.idcardnum) {
         wx.showToast({
-          title: '请填写身份证号码',
+          title: '请填写身份证号',
           icon: 'none'
         })
       } else if (that.data.check == false) {

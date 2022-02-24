@@ -124,6 +124,29 @@ Page({
         wx.navigateTo({
           url: '/pages/sjcx/sjcx',
         })
-        
-      }
+      },
+
+      jcjlsc:function () {
+        wx.navigateTo({
+          url: '/pages/jcjlsc/jcjlsc',
+        })
+      },
+
+      tmgl:function () {
+        wx.navigateTo({
+          url: '/pages/tmgl/tmgl',
+        })
+      },
+
+      tkgl:function () {
+        wx.navigateTo({
+          url: '/pages/tkgl/tkgl',
+        })
+      },
+
+      zhpz:function () {
+        wx.navigateTo({
+          url: '/pages/zhpz/zhpz',
+        })
+      },
 })

@@ -1,0 +1,7 @@
+<view class="input">生成条码数：<input class='num' bindblur="input" name='num' type="number" maxlength="3" /><button size="mini" class="confirm"  bindtap="confirm">确定</button></view>
+<view class="barcode" wx:for="{{code}}">
+  <view class="barnum">{{item}}</view>
+  <view class="barcodeview">
+  <canvas class="barcode2" canvas-id="barcode{{index}}" />
+</view>
+</view>

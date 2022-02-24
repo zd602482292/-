@@ -117,11 +117,18 @@ Page({
   else if(app.globalData.QRcode == false)
   {
     wx.showToast({
-      title: '请先完成检测申请',
+      title: '请先申请检测',
       icon:'error'
     })
   }
 
+  },
+
+  jcjl:function () {
+    wx.navigateTo({
+      url: '/pages/jcjl/jcjl',
+    })
+    
   }
 
 
