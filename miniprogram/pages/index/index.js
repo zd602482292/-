@@ -1,10 +1,12 @@
 const app = getApp()
+const db = wx.cloud.database();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    banner:[]
   },
 
   /**
@@ -23,6 +25,20 @@ Page({
       complete:res=>{
         app.globalData.openid=res.result.openId;
         console.log('用户的openid为:',app.globalData.openid)
+      }
+    })
+    db.collection('banner').get({
+      success: res => {
+          console.log(res)
+          var a=[]
+          var num=res.data.length
+          for(var i=0;i<num;i++)
+          {
+            a[i]=res.data[i].banner
+          }
+          this.setData({
+            banner:a
+          })
       }
     })
   },

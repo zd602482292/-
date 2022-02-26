@@ -22,12 +22,12 @@ Page({
           openid
         },
         success: res => {
+          app.globalData.idcardnum=res.result.data[0].idcardnum
           console.log('获取用户已有信息',res.result)
           if(res.result.data.length!=0){
           if (res.result.data[0].QRCode) {
             console.log('读取到已有检测二维码')
             app.globalData.QRcode = true
-            app.globalData.QRcodesrc = res.result.data[0].QRCode
           }
         }
       }
@@ -125,11 +125,14 @@ Page({
   },
 
   jcjl:function () {
-    wx.navigateTo({
+    setTimeout(function(){wx.navigateTo({
       url: '/pages/jcjl/jcjl',
-    })
+    })},50) 
+      
+    }
     
-  }
+    
+  
 
 
 

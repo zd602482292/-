@@ -11,9 +11,7 @@
 <view>
     <button  class="btn" bindtap="tmgl">条码管理</button>
 </view>
-<view>
-    <button class="btn" bindtap="tkgl">题库管理</button>
-</view>
+
 <view wx:if="{{permission}}==0">
-    <button  class="btn" bindtap="zhpz">账户配置</button>
+    <button  class="btn" bindtap="zhpz">管理账户配置</button>
 </view>

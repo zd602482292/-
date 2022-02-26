@@ -1,106 +1,60 @@
 const app = getApp()
-
+const db = wx.cloud.database();
+const _ = db.command;
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     date: '',
-    questionList: [{
-        title: '问题1？',
-        items: [{
-            id: 1,
-            value: '是'
-          },
-          {
-            id: 2,
-            value: '否'
-          }
-        ]
-      },
-      {
-        title: '问题2？',
-        items: [{
-            id: 1,
-            value: '是'
-          },
-          {
-            id: 2,
-            value: '否'
-          }
-        ]
-      },
-      {
-        title: '问题3？',
-        items: [{
-            id: 1,
-            value: '是'
-          },
-          {
-            id: 2,
-            value: '否'
-          }
-        ]
-      },
-      {
-        title: '问题4？',
-        items: [{
-            id: 1,
-            value: '是'
-          },
-          {
-            id: 2,
-            value: '否'
-          }
-        ]
-      },
-      {
-        title: '问题5？',
-        items: [{
-            id: 1,
-            value: '是'
-          },
-          {
-            id: 2,
-            value: '否'
-          }
-        ]
-      },
-      {
-        title: '问题6？',
-        items: [{
-            id: 1,
-            value: '是'
-          },
-          {
-            id: 2,
-            value: '否'
-          }
-        ]
-      },
-    ],
+    questionList: [],
     textareaValue: '',
-    result: {
-      questionnaire1: '',
-      questionnaire2: '',
-      questionnaire3: '',
-      questionnaire4: '',
-      questionnaire5: '',
-      questionnaire6: '',
-    },
-  },
-  textareaInput: function (e) {
-    this.setData({
-      textareaValue: e.detail.value,
-    })
-
+    result: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.showLoading({
+      title: '加载中',
+    })
+    db.collection('tiku').get({
+      success: res => {
+          console.log(res)
+          var num=0
+          num=res.data[0].tiku1.length
+          var array=new Array(num).fill('')
+          var List=[]
+          for(var i=0;i<num;i++)
+          {
+            List[i]={
+              title: res.data[0].tiku1[i],
+        items: [{
+            id: 1,
+            value: '是'
+          },
+          {
+            id: 2,
+            value: '否'
+          }
+        ]
+            }
+          }
+          this.setData({
+            questionList:List,
+            result:array
+          })
+          console.log(this.data.questionList)
+          wx.hideLoading({
+          })
+      },
+      fail:e=>{
+        wx.hideLoading({
+        })
+        console.log(e)
+      }
+  })
   },
 
   /**
@@ -153,47 +107,23 @@ Page({
   },
   radioChange: function (e) {
 
-    let index = e.currentTarget.dataset.index;
-    let resultValue = 'result.questionnaire' + index;
+    let index = e.currentTarget.dataset.index-1;
+    let resultValue = 'result['+index+']';
     this.setData({
       [resultValue]: e.detail.value
     })
+    console.log(this.data.result)
   },
   submit: function () {
     let openid = app.globalData.openid;
     let parems = this.data.result;
     let date = this.data.date;
-    if (parems.questionnaire1 == '') {
+    if (parems.indexOf('')!=-1) {
       wx.showToast({
-        title: '请回答第1题',
+        title: '请回答完问题',
         icon: 'none'
       })
-    } else if (parems.questionnaire2 == '') {
-      wx.showToast({
-        title: '请回答第2题',
-        icon: 'none'
-      })
-    } else if (parems.questionnaire3 == '') {
-      wx.showToast({
-        title: '请回答第3题',
-        icon: 'none'
-      })
-    } else if (parems.questionnaire4 == '') {
-      wx.showToast({
-        title: '请回答第4题',
-        icon: 'none'
-      })
-    } else if (parems.questionnaire5 == '') {
-      wx.showToast({
-        title: '请回答第5题',
-        icon: 'none'
-      })
-    } else if (parems.questionnaire6 == '') {
-      wx.showToast({
-        title: '请回答第6题',
-        icon: 'none'
-      })
-    } else if (this.data.date == '') {
+    }  else if (this.data.date == '') {
       wx.showToast({
         title: '请选择日期',
         icon: 'none'

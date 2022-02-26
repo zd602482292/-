@@ -15,7 +15,8 @@ exports.main = async (event, context) => {
          idcardnum:event.jcryidcard,
          sex:event.jcrysex,
          barcode:event.barcode,
-         time:event.time
+         time:event.time,
+         complete:event.complete
         }
     })
 }

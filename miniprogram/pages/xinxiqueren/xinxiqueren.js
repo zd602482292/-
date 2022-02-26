@@ -86,6 +86,7 @@ Page({
         let jcryidcard = app.globalData.jcryidcard
         let jcryphonenum = app.globalData.jcryphonenum
         let time = util.formatTime(new Date())
+        let complete = false
         wx.cloud.callFunction({
             name: 'jcjladd',
             data: {
@@ -94,7 +95,8 @@ Page({
                 jcryidcard,
                 jcrysex,
                 jcryphonenum,
-                time
+                time,
+                complete
             },
             success: res => {
                 console.log('检测记录入库成功',res)

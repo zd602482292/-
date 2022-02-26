@@ -1,1 +1,58 @@
-/* pages/jcjl/jcjl.wxss */
+.container{
+    margin-top: 30rpx;
+}
+.title {
+    font-size:xx-large;
+    font-weight: bold;
+    color: #00008B;
+    margin-bottom: 10rpx;
+}
+.tab {
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding: 10rpx 0;
+  }
+   
+  .topTabSwiper {
+    margin-top: 20rpx;
+    border-bottom: 1px solid #ccc;
+    zoom: 1;
+  }
+   
+  .topTabSwiper:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+   
+  .tabBorer {
+    border-bottom: 1px solid #00008B;
+    color: #00008B;
+  }
+
+  .swiper {
+    position: fixed;
+    display: block;
+    width: 100%;
+    
+  }
+
+  .jilu{
+    border-bottom: 1px solid #ccc;
+  }
+  .name{
+    margin: 10rpx 10rpx;
+    font-size: x-large;
+    font-weight:bold
+  }
+  .time1{
+    margin: 20rpx 10rpx;
+    color:rgb(112, 112, 112);
+    font-size: small;
+  }
+  .swiper-items{
+    height: 100%;
+  }
+   
+  

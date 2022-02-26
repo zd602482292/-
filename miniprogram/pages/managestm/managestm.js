@@ -138,12 +138,6 @@ Page({
         })
       },
 
-      tkgl:function () {
-        wx.navigateTo({
-          url: '/pages/tkgl/tkgl',
-        })
-      },
-
       zhpz:function () {
         wx.navigateTo({
           url: '/pages/zhpz/zhpz',

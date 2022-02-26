@@ -101,6 +101,24 @@
                     "pathName": "pages/tmgl/tmgl",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/jcjl/jcjl",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/sjcx/sjcx",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/sjcx/sjcx",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

@@ -1,6 +1,5 @@
 <view>
     <view class="title">患者问卷信息调查</view>
-    <view class="tip">注：带*号为必填内容</view>
     <form bindsubmit="submit">
         <view wx:for="{{questionList}}" wx:key="index" wx:for-item="a" wx:for-index="index" class="row" style="white-space:pre-wrap">{{index+1}}:{{a.title}}<view class="select">
                 <radio-group bindchange="radioChange" data-index="{{index+1}}" class="inp radiogroup">

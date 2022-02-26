@@ -17,10 +17,10 @@ App({
     this.globalData = {
       openid: null,
       loginUser: null,
+      idcardnum:null,
       name: null,
       signsrc: null,
       QRcode: false,
-      QRcodesrc: null,
       jcryid:null,
       jcryname:null,
       jcrysex:null,

@@ -11,12 +11,7 @@ exports.main = async (event, context) => {
         openid:event.openid
     }).update({
         data:{
-        question1:event.parems.questionnaire1,
-        question2:event.parems.questionnaire2,
-        question3:event.parems.questionnaire3,
-        question4:event.parems.questionnaire4,
-        question5:event.parems.questionnaire5,
-        question6:event.parems.questionnaire6,
+        questionresult:event.parems,
         date:event.date
 
     }})

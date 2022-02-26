@@ -2,16 +2,16 @@
 <view class="banner">
   <swiper indicator-dots indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff" autoplay circular interval="2000">
     <swiper-item>
-      <image src="/images/banner1.jpg" />
+      <image src="{{banner[0]}}" />
     </swiper-item>
     <swiper-item>
-      <image src="/images/banner2.jpg" />
+      <image src="{{banner[1]}}" />
     </swiper-item>
     <swiper-item>
-      <image src="/images/banner3.jpg" />
+      <image src="{{banner[2]}}" />
     </swiper-item>
     <swiper-item>
-      <image src="/images/banner4.jpg" />
+      <image src="{{banner[3]}}" />
     </swiper-item>
   </swiper>
 </view>
