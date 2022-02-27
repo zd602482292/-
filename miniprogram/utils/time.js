@@ -1,3 +1,6 @@
+function p(s) {
+  return s<10?'0'+s:s;
+}
 function formatTime(date) {
     var year = date.getFullYear()
     var month = date.getMonth() + 1
@@ -5,7 +8,7 @@ function formatTime(date) {
     var hour = date.getHours()
     var minute = date.getMinutes()
     var second = date.getSeconds()
-    return year + "年" + month + "月" + day + "日" + hour + "时" + minute + "分" + second+"秒";
+    return year + "-" + p(month) + "-" + p(day) + " " + p(hour) + ":" + p(minute) + ":" + p(second);
   }
   
   module.exports = {

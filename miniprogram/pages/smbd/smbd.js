@@ -75,6 +75,7 @@ Page({
             scanType: ['barCode'],
             success(res) {
                 console.log(res)
+                if(res.scanType=="CODE_128"){
                 app.globalData.jcrybarcode=res.result
                 wx.vibrateShort({
                     type: 'medium'
@@ -82,9 +83,20 @@ Page({
                 wx.redirectTo({
                     url: '/pages/xinxiqueren/xinxiqueren',
                 })
+            }
+            else{
+                wx.showToast({
+                  title: '扫码失败',
+                  icon:'error'
+                })
+            }
             },
 
             fail(e) {
+                wx.showToast({
+                    title: '扫码失败',
+                    icon:'error'
+                  })
                 console.log(e)
             }
 

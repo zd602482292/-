@@ -10,6 +10,9 @@
 }
 .barcode2{
     height: 100%;
+    width: 100%;
+    margin:0 75rpx ;
+
 }
 .input {
     display: flex;
@@ -19,18 +22,19 @@
     height: 80rpx;
     line-height: 80rpx;
     margin-top: 10rpx;
+    margin-bottom: 50rpx;
     margin-left: 20rpx;
     border-bottom: 1px solid #f1f1f1;
-    font-size: 32rpx;
+    font-size:32rpx;
     color: #353535;
 }
 
 .num{
-    margin-top: 20rpx;
+    margin: auto;
 }
 
 .confirm {
-    margin-top: 10rpx;
-    height: 80%;
+    margin: auto;
+    height: 95%;
     border: 3px solid #00008B;
 }
