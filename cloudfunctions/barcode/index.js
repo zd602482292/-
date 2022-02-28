@@ -7,13 +7,11 @@ const db=cloud.database()
 const _ = db.command
 // 云函数入口函数
 exports.main = async (event, context) => {
-    return await db.collection('wenjuan').where({
-        openid:event.openid
-    }).update({
+    return await db.collection('barcode').add({
         data:{
-        name:event.name,
-        questionresult:event.parems,
-        date:event.date
-
-    }})
+         barcode:event.name,
+         cloudPath:event.fileID,
+         time:event.time
+        }
+    })
 }

@@ -116,6 +116,7 @@ Page({
   },
   submit: function () {
     let openid = app.globalData.openid;
+    let name = app.globalData.name;
     let parems = this.data.result;
     let date = this.data.date;
     if (parems.indexOf('')!=-1) {
@@ -141,6 +142,7 @@ Page({
               name: 'wenjuanupd',
               data: {
                 openid,
+                name,
                 parems,
                 date
               },
@@ -156,6 +158,7 @@ Page({
               name: 'wenjuanadd',
               data: {
                 openid,
+                name,
                 parems,
                 date
               },

@@ -6,9 +6,11 @@
 .barcodeview{
     display: flex;
     justify-content: center;
-    height: 150rpx;
+    height: 100rpx;
+    margin-bottom: 20rpx;
 }
 .barcode2{
+
     height: 100%;
     width: 100%;
     margin:0 75rpx ;
@@ -36,5 +38,9 @@
 .confirm {
     margin: auto;
     height: 95%;
+    border: 3px solid #00008B;
+}
+
+.btn{
     border: 3px solid #00008B;
 }

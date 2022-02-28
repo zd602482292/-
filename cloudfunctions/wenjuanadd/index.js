@@ -11,6 +11,7 @@ exports.main = async (event, context) => {
    return await db.collection('wenjuan').add({
        data:{
         openid:event.openid,
+        name:event.name,
         questionresult:event.parems,
         date:event.date
        }

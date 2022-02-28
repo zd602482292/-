@@ -126,11 +126,7 @@ Page({
         })
       },
 
-      jcjlsc:function () {
-        wx.navigateTo({
-          url: '/pages/jcjlsc/jcjlsc',
-        })
-      },
+     
 
       tmgl:function () {
         wx.navigateTo({

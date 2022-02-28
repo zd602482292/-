@@ -6,9 +6,6 @@
     <button class="btn" bindtap="sjcx">检测数据查询</button>
 </view>
 <view>
-    <button class="btn" bindtap="jcjlsc">检测记录上传</button>
-</view>
-<view>
     <button  class="btn" bindtap="tmgl">条码管理</button>
 </view>
 
