@@ -149,5 +149,9 @@ Page({
             currentData: e.target.dataset.current
           })
         }
-      }
+      },
+      onclick: function (e) {
+        console.log(e.currentTarget.dataset.text);
+        app.globalData.reportbarcode=e.currentTarget.dataset.text;
+    }
 })

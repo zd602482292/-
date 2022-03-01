@@ -1,5 +1,7 @@
 .container{
+  width: 100%;
     margin-top: 30rpx;
+    position:fixed;
 }
 .title {
     font-size:xx-large;
@@ -15,6 +17,7 @@
   }
    
   .topTabSwiper {
+    width:100%;
     margin-top: 20rpx;
     border-bottom: 1px solid #ccc;
     zoom: 1;
@@ -54,5 +57,9 @@
   .swiper-items{
     height: 100%;
   }
-   
+  .navigator {
+    margin: 20rpx 10rpx;
+    color:#00008B;
+    font-size: small;
+  }
   

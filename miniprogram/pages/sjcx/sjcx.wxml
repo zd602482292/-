@@ -15,8 +15,6 @@
         <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>检测完成</view>
         <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>检测中</view>
     </view>
-
-
     <swiper current="{{currentData}}" class='swiper' style="height: {{windowHeight - 150}}px" duration="300" bindchange="bindchange">
         <swiper-item>
             <scroll-view class="swiper-items" scroll-y="true">
@@ -25,13 +23,17 @@
                     <view class="time1">身份证号：{{item.idcardnum}}</view>
                     <view class="time1">手机号：{{item.phonenum}}</view>
                     <view class="time1">采样时间： {{item.time}}</view>
+                    <view class="time1">检测时间： {{item.time2}}</view>
+                    <navigator url="/pages/jcjg/jcjg" class="navigator" bindtap="onclick" data-text="{{item.barcode}}">查看详情</navigator>
                 </view>
             </scroll-view>
         </swiper-item>
         <swiper-item>
             <scroll-view class="swiper-items" scroll-y="true">
-                <view class="jilu" wx:for="{{jcjl}}" wx:for-item="item" wx:if="{{item.complete==false}}">
+                <view class="jilu" wx:for="{{jcjl}}" wx:for-item="item" wx:if="{{item.complete==false}}" bindtap="onclick" data-text="{{item.barcode}}"> 
                     <view class="name">{{item.name}}</view>
+                    <view class="time1">身份证号：{{item.idcardnum}}</view>
+                    <view class="time1">手机号：{{item.phonenum}}</view>
                     <view class="time1">采样时间： {{item.time}}</view>
                     <view class="scrollSpase"></view>
                 </view>

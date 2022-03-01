@@ -12,6 +12,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中...',
+    })
     let openid = app.globalData.openid;
     this.setData({
         loginuser: app.globalData.loginUser
@@ -22,15 +25,20 @@ Page({
           openid
         },
         success: res => {
-          app.globalData.idcardnum=res.result.data[0].idcardnum
-          console.log('获取用户已有信息',res.result)
-          if(res.result.data.length!=0){
-          if (res.result.data[0].QRCode) {
-            console.log('读取到已有检测二维码')
-            app.globalData.QRcode = true
+          console.log('获取用户已有信息', res.result)
+          if (res.result.data.length != 0) {
+            if (res.result.data[0].QRCode) {
+              console.log('读取到已有检测二维码')
+              app.globalData.QRcode = true
+              app.globalData.idcardnum = res.result.data[0].idcardnum
+            }
           }
+          wx.hideLoading({})
+        },
+        fail: e => {
+          console.log(e)
+          wx.hideLoading({})
         }
-      }
       })
 
   },
@@ -83,56 +91,52 @@ Page({
   },
 
   jcsq: function () {
-    if(app.globalData.QRcode == true)
-    {
+    if (app.globalData.QRcode == true) {
       wx.showModal({
-        title:'提示',
-        content:'已有检测码，是否重新进行检测申请',
-        success(res){
-        if (res.confirm) {
-          console.log('用户点击确定')
-          wx.navigateTo({
-            url: '/pages/smrz/smrz',
-          })
-        } 
-      }
-    })
-  }
-  else if(app.globalData.QRcode == false)
-  {
-    wx.navigateTo({
-      url: '/pages/smrz/smrz',
-    })
-  }
+        title: '提示',
+        content: '已有检测码，是否重新进行检测申请',
+        success(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+            wx.navigateTo({
+              url: '/pages/smrz/smrz',
+            })
+          }
+        }
+      })
+    } else if (app.globalData.QRcode == false) {
+      wx.navigateTo({
+        url: '/pages/smrz/smrz',
+      })
+    }
 
   },
 
   QRcode: function () {
-    if(app.globalData.QRcode == true)
-    {
-    wx.navigateTo({
-      url: '/pages/QRcode/QRcode',
-    })
-  }
-  else if(app.globalData.QRcode == false)
-  {
-    wx.showToast({
-      title: '请先申请检测',
-      icon:'error'
-    })
-  }
+    if (app.globalData.QRcode == true) {
+      wx.navigateTo({
+        url: '/pages/QRcode/QRcode',
+      })
+    } else if (app.globalData.QRcode == false) {
+      wx.showToast({
+        title: '请先申请检测',
+        icon: 'error'
+      })
+    }
 
   },
 
-  jcjl:function () {
-    setTimeout(function(){wx.navigateTo({
-      url: '/pages/jcjl/jcjl',
-    })},50) 
-      
-    }
-    
-    
-  
+  jcjl: function () {
+    setTimeout(function () {
+      wx.navigateTo({
+        url: '/pages/jcjl/jcjl',
+      })
+    }, 50)
+
+  }
+
+
+
 
 
 

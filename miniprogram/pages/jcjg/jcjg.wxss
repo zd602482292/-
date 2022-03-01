@@ -1,0 +1,17 @@
+.jilu {
+
+}
+
+.name {
+    margin: 10rpx 10rpx;
+    font-size: x-large;
+    font-weight: bold
+}
+
+.time1 {
+    margin: 10rpx 10rpx;
+    color: black;
+}
+.report{
+    margin: 0rpx 30rpx;
+}

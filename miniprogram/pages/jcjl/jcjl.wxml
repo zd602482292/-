@@ -10,6 +10,9 @@
                 <view class="jilu" wx:for="{{jcjl}}" wx:for-item="item" wx:if="{{item.complete==true}}">
                     <view class="name">{{item.name}}</view>
                     <view class="time1">采样时间： {{item.time}}</view>
+                    <view class="time1">检测时间： {{item.time2}}</view>
+                    <navigator url="/pages/jcjg/jcjg" class="navigator" bindtap="onclick" data-text="{{item.barcode}}">查看详情
+                    </navigator>
                 </view>
             </scroll-view>
         </swiper-item>

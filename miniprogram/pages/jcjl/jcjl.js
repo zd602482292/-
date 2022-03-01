@@ -7,13 +7,23 @@ Page({
      */
     data: {
         jcjl:"",
-        currentData : 0
+        currentData : 0,
+        windowHeight:""
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+      wx.getSystemInfo({
+        success: (res) => {
+          let windowHeight = res.windowHeight
+       
+          this.setData({
+            windowHeight: windowHeight
+          })
+        }
+      })
         let idcardnum = app.globalData.idcardnum
         db.collection('jcjl').orderBy('time','desc').where({
             idcardnum: idcardnum
@@ -96,5 +106,10 @@ Page({
             currentData: e.target.dataset.current
           })
         }
-      }
+      },
+
+      onclick: function (e) {
+        console.log(e.currentTarget.dataset.text);
+        app.globalData.reportbarcode=e.currentTarget.dataset.text;
+    }
 })

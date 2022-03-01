@@ -1,0 +1,13 @@
+<view class="jilu">
+    <view class="name">{{jcjl.name}}</view>
+    <view class="time1">性别：{{jcjl.sex}}</view>
+    <view class="time1">身份证号：{{jcjl.idcardnum}}</view>
+    <view class="time1">手机号：{{jcjl.phonenum}}</view>
+    <view class="time1">样本条码号：{{jcjl.barcode}}</view>
+    <view class="time1">采样时间： {{jcjl.time}}</view>
+    <view class="time1">检测时间： {{jcjl.time2}}</view>
+    <view class="time1">检测报告：</view>
+    <view class="report">
+    <rich-text class="report" nodes="{{jcjl.report}}"> </rich-text>
+    </view>
+</view>
