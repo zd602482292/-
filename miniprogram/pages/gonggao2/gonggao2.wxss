@@ -1,0 +1,15 @@
+
+.title {
+    margin: 5rpx 10rpx;
+    font-size: large;
+    font-weight: bold
+}
+
+.time {
+    margin: 10rpx 10rpx;
+    color: rgb(112, 112, 112);
+    border-bottom: 1px solid #ccc;
+}
+.content{
+    margin: 20rpx 10rpx;
+}

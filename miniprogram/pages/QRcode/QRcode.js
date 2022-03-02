@@ -7,7 +7,6 @@ Page({
      */
     data: {
         name: '',
-        src: '',
         Img: '',
         Brightness: ''
     },
@@ -16,11 +15,8 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        //获取用户姓名
         var openid = app.globalData.openid;
-        this.setData({
-            src: app.globalData.QRcodesrc
-        })
         let that = this;
         wx.cloud.callFunction({
             name: 'userget',
@@ -37,10 +33,11 @@ Page({
                 console.log('获取姓名失败：', res.result.data[0].name);
             }
         })
-        
+
         wx.showLoading({
             title: '二维码加载中'
         })
+        //生成二维码
         const query = wx.createSelectorQuery()
         query.select('#Qrcode')
             .fields({
@@ -51,7 +48,7 @@ Page({
                 var x = this.randomWord();
                 var y = this.randomWord();
                 var canvas = res[0].node;
-
+                //生成二维码中心图标
                 var img = canvas.createImage();
                 img.src = "/images/logo.png"
                 img.onload = function () {
@@ -63,6 +60,7 @@ Page({
                         padding: 10,
                         background: '#ffffff',
                         foreground: '#000000',
+                        //二维码数据由随机数x+用户openid+随机数y+字符串组成
                         text: x + openid + y + 'weimeiyiliaotuoyecaijixiaochengxu',
                         image: {
                             imageResource: img,
@@ -72,7 +70,7 @@ Page({
                         }
                     }
                     drawQrcode(options)
-                    // 获取临时路径（得到之后，想干嘛就干嘛了）
+                    // 获取生成的二维码临时路径
                     wx.canvasToTempFilePath({
                         canvasId: 'Qrcode',
                         canvas: canvas,
@@ -80,8 +78,6 @@ Page({
                         y: 0,
                         width: 550,
                         height: 550,
-                        //destWidth: 550,
-                        //destHeight: 550,
                         success(res) {
                             wx.hideLoading({})
                             console.log('二维码临时路径：', res.tempFilePath)
@@ -100,7 +96,7 @@ Page({
                                     console.log('二维码入库失败: ', result)
                                 },
                             })
-                            
+
                         },
                         fail(res) {
                             console.error(res)
@@ -114,19 +110,12 @@ Page({
     },
 
     /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-
-    },
-
-    /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
 
         let that = this;
+        //进入本页面将屏幕亮度设置为最亮
         wx.getScreenBrightness({
             success: function (res) {
                 that.setData({
@@ -152,6 +141,7 @@ Page({
      * 生命周期函数--监听页面隐藏
      */
     onHide: function () {
+        //离开本页面后恢复原来的屏幕亮度
         wx.setScreenBrightness({
             value: this.data.Brightness,
         })
@@ -161,32 +151,14 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
+        //关闭本页面后恢复原来的屏幕亮度
         wx.setScreenBrightness({
             value: this.data.Brightness,
         })
     },
 
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
 
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    },
-
+    //生成随机数用于二维码数据
     randomWord: function () {
 
         var chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '[', '/', '=', '+', '-', ']'];

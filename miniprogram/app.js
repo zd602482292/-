@@ -28,7 +28,8 @@ App({
       jcryphonenum:null,
       permission:null,
       jcrybarcode:null,
-      reportbarcode:null
+      reportbarcode:null,
+      xinwenid:null
       
     };
   },

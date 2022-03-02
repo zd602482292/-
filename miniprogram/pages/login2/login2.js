@@ -128,6 +128,7 @@ Page({
               wx.hideLoading({
                
               })
+              console.log(app.globalData.permission)
               wx.redirectTo({
                 url: '/pages/managestm/managestm',
               })

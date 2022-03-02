@@ -12,11 +12,15 @@
         "pages/smbd/smbd",
         "pages/sjcx/sjcx",
         "pages/jcjl/jcjl",
-        "pages/jcjlsc/jcjlsc",
-        "pages/tmgl/tmgl",
-        "pages/zhpz/zhpz",
         "pages/xinxiqueren/xinxiqueren",
-        "pages/jcjg/jcjg"
+        "pages/jcjg/jcjg",
+        "pages/gonggao/gonggao",
+        "pages/yxzl/yxzl",
+        "pages/cjwt/cjwt",
+        "pages/gonggao2/gonggao2",
+        "pages/yxzl2/yxzl2",
+        "pages/cjwt2/cjwt2",
+        "pages/banner/banner"
     ],
     "window": {
         "backgroundColor": "#F6F6F6",

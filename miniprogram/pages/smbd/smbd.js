@@ -15,6 +15,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        //展示获取的检测用户信息
         this.setData({
             jcryname: app.globalData.jcryname,
             jcrysex: app.globalData.jcrysex,
@@ -23,80 +24,38 @@ Page({
         })
     },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
 
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {},
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    },
-
+    //扫描条形码按钮
     barcode: function () {
+        //进入扫描页
         wx.scanCode({
+            //扫描类型为条形码
             scanType: ['barCode'],
             success(res) {
                 console.log(res)
-                if(res.scanType=="CODE_128"){
-                app.globalData.jcrybarcode=res.result
-                wx.vibrateShort({
-                    type: 'medium'
-                })
-                wx.redirectTo({
-                    url: '/pages/xinxiqueren/xinxiqueren',
-                })
-            }
-            else{
-                wx.showToast({
-                  title: '扫码失败',
-                  icon:'error'
-                })
-            }
+                //当扫描的条形码为CODE_128型时成功
+                if (res.scanType == "CODE_128") {
+                    app.globalData.jcrybarcode = res.result
+                    //扫描成功震动提示
+                    wx.vibrateShort({
+                        type: 'medium'
+                    })
+                    wx.redirectTo({
+                        url: '/pages/xinxiqueren/xinxiqueren',
+                    })
+                } else {
+                    wx.showToast({
+                        title: '扫码失败',
+                        icon: 'error'
+                    })
+                }
             },
 
             fail(e) {
                 wx.showToast({
                     title: '扫码失败',
-                    icon:'error'
-                  })
+                    icon: 'error'
+                })
                 console.log(e)
             }
 

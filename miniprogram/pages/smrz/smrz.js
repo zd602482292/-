@@ -20,62 +20,7 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
+  //性别选择判定
   radioChange: function (e) {
     this.setData({
       check: true
@@ -91,24 +36,28 @@ Page({
   },
 
 
+  //姓名输入
   input1: function (data) {
     this.setData({
       nameinput: data.detail.value
     })
   },
 
+  //手机号码输入
   input2: function (data) {
     this.setData({
       phonenum: data.detail.value
     })
   },
 
+  //身份证号输入
   input3: function (data) {
     this.setData({
       idcardnum: data.detail.value
     })
   },
 
+  //信息form按钮提交
   infoform(res) {
     var {
       name,
@@ -122,8 +71,9 @@ Page({
     } else if (sex == 2) {
       sex = '女'
     }
-    let that=this
+    let that = this
     setTimeout(function () {
+      //判定输入项是否为空
       if (!that.data.nameinput) {
         wx.showToast({
           title: '请填写姓名',
@@ -145,6 +95,7 @@ Page({
           icon: 'none'
         })
       } else {
+        //读取信息输入库，如已有身份信息则更新；如未有身份信息则添加新信息
         wx.cloud.callFunction({
           name: 'userget',
           data: {
@@ -199,10 +150,6 @@ Page({
         console.log('身份认证信息：', that.data);
       }
     }, 100)
-
-  },
-
-  save: function () {
 
   }
 })

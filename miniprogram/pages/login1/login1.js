@@ -15,6 +15,7 @@ Page({
     wx.showLoading({
       title: '加载中...',
     })
+    //根据openid读取用户信息，检测是否已经生成二维码
     let openid = app.globalData.openid;
     this.setData({
         loginuser: app.globalData.loginUser
@@ -31,6 +32,7 @@ Page({
               console.log('读取到已有检测二维码')
               app.globalData.QRcode = true
               app.globalData.idcardnum = res.result.data[0].idcardnum
+              app.globalData.signsrc = res.result.data[0].sign
             }
           }
           wx.hideLoading({})
@@ -43,54 +45,9 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
+  //检测申请按钮
   jcsq: function () {
+    //如果已生成二维码，点击检测申请弹出提示；如果未生成则直接跳转检测申请的实名认证页面
     if (app.globalData.QRcode == true) {
       wx.showModal({
         title: '提示',
@@ -111,8 +68,9 @@ Page({
     }
 
   },
-
+  //我的检测码按钮
   QRcode: function () {
+    //如果已有检测码，点击按钮直接跳转检测码页面；如果未有检测码，则不跳转并提示先申请检测
     if (app.globalData.QRcode == true) {
       wx.navigateTo({
         url: '/pages/QRcode/QRcode',
@@ -125,8 +83,9 @@ Page({
     }
 
   },
-
+  //检测记录按钮
   jcjl: function () {
+    //跳转检测记录页面
     setTimeout(function () {
       wx.navigateTo({
         url: '/pages/jcjl/jcjl',
@@ -134,11 +93,6 @@ Page({
     }, 50)
 
   }
-
-
-
-
-
 
 
 })

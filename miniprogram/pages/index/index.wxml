@@ -1,40 +1,34 @@
-
 <view class="banner">
   <swiper indicator-dots indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff" autoplay circular interval="2000">
-    <swiper-item>
-      <image src="{{banner[0]}}" />
+    <swiper-item wx:for="{{banner}}" wx:for-index="i">
+      <navigator wx:if="{{banner[i].title!=null}}" url="/pages/banner/banner" bindtap="onclick" data-text="{{banner[i]._id}}">
+      <image src="{{banner[i].banner}}" />
+      </navigator>
+      <image wx:else="{{banner[i].title==null}}" src="{{banner[i].banner}}" />
     </swiper-item>
-    <swiper-item>
-      <image src="{{banner[1]}}" />
-    </swiper-item>
-    <swiper-item>
-      <image src="{{banner[2]}}" />
-    </swiper-item>
-    <swiper-item>
-      <image src="{{banner[3]}}" />
-    </swiper-item>
+
   </swiper>
 </view>
 
 <view class="major">
-    <navigator class="box"  url="" >
-    <image class="pic" src="/images/gonggao.svg" ></image>
+  <navigator class="box" url="/pages/gonggao/gonggao">
+    <image class="pic" src="/images/gonggao.svg"></image>
     <view class="txt">公告</view>
-    </navigator>
-    <navigator class="box"  url="">
-    <image class="pic" src="/images/yixueziliao.svg" ></image>
+  </navigator>
+  <navigator class="box" url="/pages/yxzl/yxzl">
+    <image class="pic" src="/images/yixueziliao.svg"></image>
     <view class="txt">医学资料</view>
-    </navigator>
-    <navigator class="box"  url="">
-    <image class="pic" src="/images/cjwt.svg" ></image>
+  </navigator>
+  <navigator class="box" url="/pages/cjwt/cjwt">
+    <image class="pic" src="/images/cjwt.svg"></image>
     <view class="txt">常见问题</view>
-    </navigator>
+  </navigator>
 </view>
 <view class="login">
-  <button class="loginbtn" plain='true' bindtap="login1" >
-    <image class="loginimg" mode="heightFix" src="/images/jcry.svg" ></image>检测人员登录
+  <button class="loginbtn" plain='true' bindtap="login1">
+    <image class="loginimg" mode="heightFix" src="/images/jcry.svg"></image>检测人员登录
   </button>
   <button class="loginbtn" plain='true' bindtap="login2">
-    <image class="loginimg" mode="heightFix" src="/images/ysdl.svg" ></image>医护人员登录
+    <image class="loginimg" mode="heightFix" src="/images/ysdl.svg"></image>医护人员登录
   </button>
 </view>

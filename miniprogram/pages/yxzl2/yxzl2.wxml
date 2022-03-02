@@ -1,0 +1,3 @@
+<view class="title">{{yxzl.title}}</view>
+<view class="time">{{yxzl.time}}</view>
+ <rich-text class="content" nodes="{{yxzl.content}}"> </rich-text>

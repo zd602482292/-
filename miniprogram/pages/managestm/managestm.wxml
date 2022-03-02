@@ -2,13 +2,6 @@
 <view>
     <button class="btn" bindtap="smbd">扫码绑定</button>
 </view>
-<view>
+<view wx:if="{{permission==0}}">
     <button class="btn" bindtap="sjcx">检测数据查询</button>
-</view>
-<view>
-    <button  class="btn" bindtap="tmgl">条码管理</button>
-</view>
-
-<view wx:if="{{permission}}==0">
-    <button  class="btn" bindtap="zhpz">管理账户配置</button>
 </view>

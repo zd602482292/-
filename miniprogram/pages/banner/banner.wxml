@@ -1,0 +1,3 @@
+<view class="title">{{banner.title}}</view>
+<view class="time">{{banner.time}}</view>
+ <rich-text class="content" nodes="{{banner.content}}"> </rich-text>

@@ -34,7 +34,7 @@
     </view>
 </view>
 <view>
-    <button form-type="submit" class='save' bindtap='save'>保存</button>
+    <button form-type="submit" class='save' >保存</button>
 </view>
 </form>
 </view>

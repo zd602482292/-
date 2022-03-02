@@ -1,0 +1,2 @@
+<view class="title">{{cjwt.title}}</view>
+ <rich-text class="content" nodes="{{cjwt.content}}"> </rich-text>

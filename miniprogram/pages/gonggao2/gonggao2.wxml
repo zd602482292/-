@@ -1,0 +1,3 @@
+<view class="title">{{gonggao.title}}</view>
+<view class="time">{{gonggao.time}}</view>
+ <rich-text class="content" nodes="{{gonggao.content}}"> </rich-text>
