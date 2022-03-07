@@ -1,6 +1,7 @@
 <view class="jilu">
     <view class="name">{{jcjl.name}}</view>
     <view class="time1">性别：{{jcjl.sex}}</view>
+    <view class="time1">年龄：{{jcjl.age}}周岁</view>
     <view class="time1">身份证号：{{jcjl.idcardnum}}</view>
     <view class="time1">手机号：{{jcjl.phonenum}}</view>
     <view class="time1">样本条码号：{{jcjl.barcode}}</view>

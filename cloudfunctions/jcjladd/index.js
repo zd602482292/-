@@ -16,7 +16,8 @@ exports.main = async (event, context) => {
          sex:event.jcrysex,
          barcode:event.barcode,
          time:event.time,
-         complete:event.complete
+         complete:event.complete,
+         age:event.age
         }
     })
 }
