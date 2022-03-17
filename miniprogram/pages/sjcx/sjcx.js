@@ -39,8 +39,11 @@ Page({
 
   //搜索按钮
   search: function () {
+    
     let c = this.data.content;
     console.log(c)
+    const that=this;
+    setTimeout(function () {
     //根据输入内容筛选数据库中检测记录
     db.collection('jcjl').orderBy('time', 'desc')
       .where(_.or([{
@@ -76,13 +79,13 @@ Page({
       ])).get()
       .then(res => {
         console.log('查询成功', res)
-        this.setData({
+        that.setData({
           jcjl: res.data
         })
       })
       .catch(res => {
         console.log('查询失败', res)
-      })
+      })},30)
   },
 
   //切换检测完成/检测中状态页
